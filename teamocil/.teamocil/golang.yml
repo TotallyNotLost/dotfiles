@@ -2,7 +2,7 @@ windows:
   - name: terminal
     focus: true
     root: code
-    layout: even-vertical
+    layout: main-vertical
     panes:
       - commands:
         focus: true
