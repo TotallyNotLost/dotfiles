@@ -1,0 +1,11 @@
+windows:
+  - name: terminal
+    root: code
+    layout: even-vertical
+    panes:
+      - go test
+  - name: editor
+    root: code
+    layout: even-vertical
+    panes:
+      - nvim .
