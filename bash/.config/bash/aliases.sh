@@ -1,3 +1,1 @@
-BASH_SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
-alias gowc='gow -w $BASH_SCRIPT_DIR/utils/grcgo.sh'
+alias gowc='gow -g ~/.config/bash/utils/grcgo.sh'
