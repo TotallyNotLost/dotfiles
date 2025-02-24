@@ -1,2 +1,2 @@
 #!/bin/bash
-grc go $1
+grc go "$@"
