@@ -6,8 +6,8 @@ windows:
     panes:
       - commands:
         focus: true
-      - gow -c run main.go
-      - gow -c test
+      - gowc -c run main.go
+      - gowc -c test
   - name: editor
     root: code
     layout: even-vertical
