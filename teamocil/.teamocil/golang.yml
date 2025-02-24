@@ -3,7 +3,7 @@ windows:
     root: code
     layout: even-vertical
     panes:
-      - go test
+      - gow test
   - name: editor
     root: code
     layout: even-vertical
