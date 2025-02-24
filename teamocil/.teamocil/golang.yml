@@ -1,9 +1,13 @@
 windows:
   - name: terminal
+    focus: true
     root: code
     layout: even-vertical
     panes:
-      - gow test
+      - commands:
+        focus: true
+      - gow -c run main.go
+      - gow -c test
   - name: editor
     root: code
     layout: even-vertical
