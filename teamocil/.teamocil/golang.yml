@@ -12,4 +12,4 @@ windows:
     root: code
     layout: even-vertical
     panes:
-      - nvim .
+      - nvim
