@@ -1,0 +1,82 @@
+ARG IMAGE=debian
+
+FROM $IMAGE
+
+ENV TERM=xterm-256color
+
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y bash curl dpkg-dev git highlight locales ranger ruby stow tmux
+RUN curl -sS https://starship.rs/install.sh  | sh -s -- -y
+
+# Set locale to en_US.UTF-8
+RUN sed -i -e 's/# en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
+RUN locale-gen
+
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
+
+# Setup grc
+RUN git clone https://github.com/garabik/grc /tmp/grc
+WORKDIR /tmp/grc
+RUN ./install.sh
+
+# Install nvim
+WORKDIR /tmp/nvim
+RUN apt-get install -y cmake file gettext ninja-build unzip
+RUN git clone https://github.com/neovim/neovim
+WORKDIR neovim
+RUN make CMAKE_BUILD_TYPE=RelWithDebInfo
+WORKDIR build
+RUN cpack -G DEB
+RUN dpkg -i nvim-linux-x86_64.deb
+
+RUN gem install teamocil
+
+#
+# User configuration
+#
+
+ARG USER=appuser
+ARG GROUP=appgroup
+RUN addgroup $GROUP && adduser --ingroup $GROUP --shell /bin/bash $USER
+
+USER ${USER}
+
+# RUN if [[ "$LSP_SERVER" = "golsp" ]] ; then echo Skipping golang setup ; else go install github.com/mitranim/gow@latest ; fi
+# Need to ty the second idea in https://stackoverflow.com/questions/43654656/dockerfile-if-else-condition-with-external-arguments
+
+WORKDIR /home/${USER}
+
+RUN mkdir -p .code/github.com/TotallyNotLost
+
+WORKDIR .code/github.com/TotallyNotLost
+
+RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+RUN git clone https://github.com/TotallyNotLost/dotfiles # 11
+
+WORKDIR dotfiles
+
+# Stow packages that require extra setup.
+# Do this before the other packages so that
+# these slow layers of the image don't need
+# to be re-run with changes to unrelated plugins.
+RUN stow -t ~ nvim teamocil tmux
+
+RUN nvim --headless "+Lazy! sync" +qall
+ARG LSP_SERVER
+RUN nvim --headless +"MasonInstall $LSP_SERVER" +qall
+RUN ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
+# Stow packages that require no extra setup.
+RUN rm ~/.bashrc
+RUN stow -t ~ bash starship
+
+WORKDIR /home/${USER}
+
+RUN echo "PATH=/go/bin:/usr/local/go/bin:\$PATH:\$(gem environment path | awk '{split(\$0, a, \":\"); print a[1]}')/bin" >> .bashrc
+RUN echo "source ~/.bashrc" >> ~/.bash_profile
+
+ARG TEAMOCIL_LAYOUT
+ENV APP_TEAMOCIL_LAYOUT=${TEAMOCIL_LAYOUT}
+CMD ["/bin/sh", "-c", "tmux new-session /usr/local/bin/teamocil ${APP_TEAMOCIL_LAYOUT}"]
