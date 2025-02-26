@@ -1,7 +1,7 @@
 windows:
   - name: terminal
     focus: true
-    root: code
+    root: workspace
     layout: main-vertical
     panes:
       - commands:
@@ -9,7 +9,7 @@ windows:
       - gowc -c run main.go
       - gowc -c test
   - name: editor
-    root: code
+    root: workspace
     layout: even-vertical
     panes:
       - nvim
