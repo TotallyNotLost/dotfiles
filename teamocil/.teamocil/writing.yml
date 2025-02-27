@@ -6,7 +6,6 @@ windows:
     panes:
       - commands:
         focus: true
-      - ./preview.sh
   - name: editor
     root: workspace
     layout: even-vertical
