@@ -1,0 +1,13 @@
+windows:
+  - name: terminal
+    focus: true
+    root: workspace
+    layout: main-vertical
+    panes:
+      - commands:
+        focus: true
+  - name: editor
+    root: workspace
+    layout: even-vertical
+    panes:
+      - nvim
