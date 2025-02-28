@@ -1,11 +1,12 @@
 export EDITOR=nvim
 
-# Init Starship
+# Starship
 eval "$(starship init bash)"
 
-# Init FZF
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# FZF
+eval "$(fzf --bash)"
 
+# Local config
 if [ -f ~/.config/bash/bashrc-local.sh ]; then
     source ~/.config/bash/bashrc-local.sh
 fi
