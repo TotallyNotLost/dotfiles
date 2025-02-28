@@ -1,11 +1,12 @@
 ARG IMAGE=debian
+ARG TYPE=coding
 
-FROM $IMAGE
+FROM $IMAGE AS base
 
 ENV TERM=xterm-256color
 
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y bash curl dpkg-dev git highlight locales ranger ruby stow tmux
+RUN apt update && apt upgrade -y
+RUN apt install -y bash curl dpkg-dev git highlight locales lsd ranger ruby stow tmux
 RUN curl -sS https://starship.rs/install.sh  | sh -s -- -y
 
 # Set locale to en_US.UTF-8
@@ -23,7 +24,7 @@ RUN ./install.sh
 
 # Install nvim
 WORKDIR /tmp/nvim
-RUN apt-get install -y cmake file gettext ninja-build unzip
+RUN apt install -y cmake file gettext ninja-build unzip
 RUN git clone https://github.com/neovim/neovim
 WORKDIR neovim
 RUN make CMAKE_BUILD_TYPE=RelWithDebInfo
@@ -53,7 +54,7 @@ RUN mkdir -p .code/github.com/TotallyNotLost
 WORKDIR .code/github.com/TotallyNotLost
 
 RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-RUN git clone https://github.com/TotallyNotLost/dotfiles # 11
+RUN git clone https://github.com/TotallyNotLost/dotfiles # 2
 
 WORKDIR dotfiles
 
@@ -64,8 +65,6 @@ WORKDIR dotfiles
 RUN stow -t ~ nvim teamocil tmux
 
 RUN nvim --headless "+Lazy! sync" +qall
-ARG LSP_SERVER
-RUN nvim --headless +"MasonInstall $LSP_SERVER" +qall
 RUN ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 
 # Stow packages that require no extra setup.
@@ -77,6 +76,35 @@ WORKDIR /home/${USER}
 RUN echo "PATH=/go/bin:/usr/local/go/bin:\$PATH:\$(gem environment path | awk '{split(\$0, a, \":\"); print a[1]}')/bin" >> .bashrc
 RUN echo "source ~/.bashrc" >> ~/.bash_profile
 
+##########
+# Coding #
+##########
+FROM base AS branch-coding
+
+ARG LSP_SERVER
+RUN nvim --headless +"MasonInstall $LSP_SERVER" +qall
+
+#############
+# Writing #
+#############
+FROM base AS branch-writing
+
+USER root
+
+RUN apt install -y pandoc pipx
+
+USER ${USER}
+WORKDIR /home/${USER}/workspace
+
+RUN pipx install epy-reader
+RUN pipx ensurepath
+
+#########
+# Final #
+#########
+FROM branch-$TYPE AS final
+
 ARG TEAMOCIL_LAYOUT
 ENV APP_TEAMOCIL_LAYOUT=${TEAMOCIL_LAYOUT}
+
 CMD ["/bin/sh", "-c", "tmux new-session /usr/local/bin/teamocil ${APP_TEAMOCIL_LAYOUT}"]
