@@ -1,5 +1,5 @@
 # General CLI
-alias l='lsd'
+alias l='lsd --date relative'
 alias ll='l -l'
 alias la='ll -a'
 
