@@ -21,5 +21,5 @@ sudo pacman -S brightnessctl btop fzf git-delta lsd neovim ranger
 
 Stow dot configs.
 ```sh
-stow -t ~ backgrounds bash git hypr nvim starship-local tmux teamocil waybar
+stow -t ~ backgrounds bash git hypr nvim starship-local tmux teamocil waybar wofi
 ```
