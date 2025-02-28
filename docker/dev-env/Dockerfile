@@ -69,7 +69,7 @@ RUN ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 
 # Stow packages that require no extra setup.
 RUN rm ~/.bashrc
-RUN stow -t ~ bash starship
+RUN stow -t ~ bash starship-docker
 
 WORKDIR /home/${USER}
 
