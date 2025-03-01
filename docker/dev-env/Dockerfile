@@ -44,9 +44,6 @@ RUN addgroup $GROUP && adduser --ingroup $GROUP --shell /bin/bash $USER
 
 USER ${USER}
 
-# RUN if [[ "$LSP_SERVER" = "golsp" ]] ; then echo Skipping golang setup ; else go install github.com/mitranim/gow@latest ; fi
-# Need to ty the second idea in https://stackoverflow.com/questions/43654656/dockerfile-if-else-condition-with-external-arguments
-
 WORKDIR /home/${USER}
 
 RUN mkdir -p .code/github.com/TotallyNotLost
@@ -83,6 +80,13 @@ FROM base AS branch-coding
 
 ARG LSP_SERVER
 RUN nvim --headless +"MasonInstall $LSP_SERVER" +qall
+
+##########
+# Golang #
+##########
+FROM branch-coding AS branch-coding-golang
+
+RUN go install github.com/mitranim/gow@latest
 
 #############
 # Writing #
