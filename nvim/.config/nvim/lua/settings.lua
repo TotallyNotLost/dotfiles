@@ -3,11 +3,8 @@ vim.cmd("colorscheme kanagawa")
 
 local api = vim.api
 
-api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", {})
-api.nvim_set_keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", {})
-api.nvim_set_keymap("n", "<leader>zf", ":TZFocus<CR>", {})
-api.nvim_set_keymap("n", "<leader>zm", ":TZMinimalist<CR>", {})
-api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", {})
+api.nvim_set_keymap("n", "<leader>-", ":split<CR>", {})
+api.nvim_set_keymap("n", "<leader>|", ":vsplit<CR>", {})
 
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
