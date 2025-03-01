@@ -1,4 +1,3 @@
-vim.cmd("set number relativenumber")
 vim.cmd("colorscheme kanagawa")
 
 local api = vim.api
