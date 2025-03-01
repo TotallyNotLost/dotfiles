@@ -6,6 +6,12 @@ windows:
     panes:
       - commands:
         focus: true
+  - name: notes
+    root: workspace
+    layout: main-vertical
+    panes:
+      - nvim notes.md -c Focusify
+      - notes example notes.md
   - name: editor
     root: workspace
     layout: even-vertical
