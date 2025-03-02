@@ -50,8 +50,9 @@ RUN mkdir -p .code/github.com/TotallyNotLost
 
 WORKDIR .code/github.com/TotallyNotLost
 
+RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-RUN git clone https://github.com/TotallyNotLost/dotfiles # 2
+RUN git clone https://github.com/TotallyNotLost/dotfiles
 
 WORKDIR dotfiles
 

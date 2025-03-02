@@ -10,7 +10,7 @@ windows:
     root: workspace
     layout: main-vertical
     panes:
-      - nvim notes.md -c Focusify
+      - nvim notes.md +Focusify
       - notes example notes.md
   - name: editor
     root: workspace
