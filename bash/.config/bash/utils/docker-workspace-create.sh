@@ -6,7 +6,7 @@ if [ $TYPE = "coding-golang" ]; then
 
 	if [ "$GIT_REPO" = "create new" ]; then
 		GIT_REPO=$(gum input --placeholder "repo")
-		echo $GIT_REPO >> ~/.config/mdnotes/git-repos.txt
+		echo $GIT_REPO >> ~/.config/dw/git-repos.txt
 	fi
 
 	sudo docker build \
@@ -24,5 +24,7 @@ elif [ $TYPE = "writing" ]; then
 		--build-arg "TYPE=$TYPE" \
 		~/.code/github.com/TotallyNotLost/dotfiles/docker/dev-env
 fi
+
+echo $NAME >> ~/.config/dw/workspaces.txt
 
 sudo docker run -dit --name $NAME $NAME
