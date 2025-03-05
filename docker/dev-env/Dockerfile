@@ -6,7 +6,7 @@ FROM $IMAGE AS base
 ENV TERM=xterm-256color
 
 RUN apt update && apt upgrade -y
-RUN apt install -y bash curl dpkg-dev git highlight locales lsd ranger ruby stow tmux
+RUN apt install -y bash curl dpkg-dev git highlight locales lsd ranger ripgrep ruby stow tmux
 RUN curl -sS https://starship.rs/install.sh  | sh -s -- -y
 
 # Set locale to en_US.UTF-8
@@ -81,6 +81,9 @@ FROM base AS branch-coding
 
 ARG LSP_SERVER
 RUN nvim --headless +"MasonInstall $LSP_SERVER" +qall
+
+ARG GIT_REPO
+RUN git clone --depth 1 $GIT_REPO
 
 ##########
 # Golang #
