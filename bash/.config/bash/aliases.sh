@@ -11,6 +11,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gs='git status'
 
 # Docker
+alias dw='~/.config/bash/utils/docker-workspace-connect.sh'
 alias dwc='~/.config/bash/utils/docker-workspace-create.sh'
 
 
