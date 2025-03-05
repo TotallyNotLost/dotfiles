@@ -3,12 +3,15 @@ alias l='lsd --date relative'
 alias ll='l -l'
 alias la='ll -a'
 
-# Git aliases
+# Git
 alias ga='git add'
 alias gc='git commit'
 alias gd='git diff'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gs='git status'
+
+# Docker
+alias dw='~/.config/bash/utils/start-docker-workspace.sh'
 
 
 #####################
