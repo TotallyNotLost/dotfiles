@@ -1,8 +1,10 @@
+set -e
+
 NAME=$(gum input --placeholder name)
 TYPE=$(gum choose coding-golang writing)
 
 if [ "$TYPE" = "coding-golang" ]; then
-	GIT_REPO=$(cat ~/.config/mdnotes/git-repos.txt | sort --reverse | gum filter)
+	GIT_REPO=$(cat ~/.config/dw/git-repos.txt | sort --reverse | gum filter)
 
 	if [ "$GIT_REPO" = "create new" ]; then
 		GIT_REPO=$(gum input --placeholder "repo")
@@ -25,8 +27,6 @@ elif [ "$TYPE" = "writing" ]; then
 		~/.code/github.com/TotallyNotLost/dotfiles/docker/dev-env
 fi
 
-if [ "$NAME" != "" ] && [ "$TYPE" != "" ]; then
-	echo $NAME >> ~/.config/dw/workspaces.txt
+echo $NAME >> ~/.config/dw/workspaces.txt
 
-	sudo docker run -dit --name $NAME $NAME
-fi
+sudo docker run -dit --name $NAME $NAME
