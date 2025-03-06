@@ -4,7 +4,7 @@ NAME=$(gum input --placeholder name)
 TYPE=$(gum choose coding-golang writing)
 
 if [ "$TYPE" = "coding-golang" ]; then
-	GIT_REPO=$(cat ~/.config/dw/git-repos.txt | sort --reverse | gum filter)
+	GIT_REPO=$(tac ~/.config/dw/git-repos.txt | gum filter)
 
 	if [ "$GIT_REPO" = "create new" ]; then
 		GIT_REPO=$(gum input --placeholder "repo")
