@@ -1,7 +1,7 @@
 NAME=$(gum input --placeholder name)
 TYPE=$(gum choose coding-golang writing)
 
-if [ $TYPE = "coding-golang" ]; then
+if [ "$TYPE" = "coding-golang" ]; then
 	GIT_REPO=$(cat ~/.config/mdnotes/git-repos.txt | sort --reverse | gum filter)
 
 	if [ "$GIT_REPO" = "create new" ]; then
@@ -17,7 +17,7 @@ if [ $TYPE = "coding-golang" ]; then
 		--build-arg "TYPE=$TYPE" \
 		--build-arg "GIT_REPO=$GIT_REPO" \
 		~/.code/github.com/TotallyNotLost/dotfiles/docker/dev-env
-elif [ $TYPE = "writing" ]; then
+elif [ "$TYPE" = "writing" ]; then
 	sudo docker build \
 		-t $NAME \
 		--build-arg "TEAMOCIL_LAYOUT=writing" \
@@ -25,6 +25,8 @@ elif [ $TYPE = "writing" ]; then
 		~/.code/github.com/TotallyNotLost/dotfiles/docker/dev-env
 fi
 
-echo $NAME >> ~/.config/dw/workspaces.txt
+if [ "$NAME" != "" ]; then
+	echo $NAME >> ~/.config/dw/workspaces.txt
 
-sudo docker run -dit --name $NAME $NAME
+	sudo docker run -dit --name $NAME $NAME
+fi
