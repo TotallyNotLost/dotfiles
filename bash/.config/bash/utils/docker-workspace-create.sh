@@ -25,7 +25,7 @@ elif [ "$TYPE" = "writing" ]; then
 		~/.code/github.com/TotallyNotLost/dotfiles/docker/dev-env
 fi
 
-if [ "$NAME" != "" ]; then
+if [ "$NAME" != "" ] && [ "$TYPE" != "" ]; then
 	echo $NAME >> ~/.config/dw/workspaces.txt
 
 	sudo docker run -dit --name $NAME $NAME
