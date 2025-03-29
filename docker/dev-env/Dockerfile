@@ -18,14 +18,14 @@ ENV LANGUAGE=en_US:en
 ENV LC_ALL=en_US.UTF-8
 
 # Setup grc
-RUN git clone https://github.com/garabik/grc /tmp/grc
+RUN git clone --depth 1 https://github.com/garabik/grc /tmp/grc
 WORKDIR /tmp/grc
 RUN ./install.sh
 
 # Install nvim
 WORKDIR /tmp/nvim
 RUN apt install -y cmake file gettext ninja-build unzip
-RUN git clone https://github.com/neovim/neovim
+RUN git clone --depth 1 https://github.com/neovim/neovim
 WORKDIR neovim
 RUN make CMAKE_BUILD_TYPE=RelWithDebInfo
 WORKDIR build
@@ -51,8 +51,8 @@ RUN mkdir -p .code/github.com/TotallyNotLost
 WORKDIR .code/github.com/TotallyNotLost
 
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
-RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-RUN git clone https://github.com/TotallyNotLost/dotfiles
+RUN git clone --depth 1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+RUN git clone --depth 1 https://github.com/TotallyNotLost/dotfiles
 
 WORKDIR dotfiles
 
