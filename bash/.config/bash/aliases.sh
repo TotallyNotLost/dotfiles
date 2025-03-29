@@ -22,6 +22,9 @@ alias dwc='~/.config/bash/utils/docker-workspace-create.sh'
 # Golang
 alias gowc='gow -g ~/.config/bash/utils/grcgo.sh'
 
+# Writing
+alias new-outline='cat ~/.code/github.com/TotallyNotLost/dotfiles/docker/dev-env/writing/outline.md >> outline.md'
+
 
 ####################
 # Custom functions #
