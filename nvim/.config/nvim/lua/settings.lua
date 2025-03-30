@@ -1,3 +1,4 @@
+vim.cmd("set ignorecase smartcase")
 vim.cmd("set undofile")
 vim.cmd("colorscheme kanagawa")
 
