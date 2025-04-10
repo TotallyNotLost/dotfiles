@@ -12,6 +12,6 @@ if [ -f ~/.config/bash/bashrc-local.sh ]; then
 fi
 
 if command -v go 2>&1 >/dev/null; then
-    PATH=$PATH:$HOME/.go/bin
+    PATH=$PATH:/usr/local/go/bin:$HOME/.go/bin
     go env -w GOPATH=$HOME/.go
 fi
