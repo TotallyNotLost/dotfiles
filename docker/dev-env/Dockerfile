@@ -82,8 +82,17 @@ FROM base AS branch-coding
 ARG LSP_SERVER
 RUN nvim --headless +"MasonInstall $LSP_SERVER" +qall
 
+ARG GIT_KEYS_DIR
+COPY $GIT_KEYS_DIR /home/${USER}/.ssh
+USER root
+RUN chmod 700 /home/${USER}/.ssh
+RUN chown -R ${USER}:${GROUP} /home/${USER}/.ssh
+USER ${USER}
+
 ARG GIT_REPO
-RUN git clone --depth 1 $GIT_REPO
+RUN git clone --depth 1 $GIT_REPO workspace
+
+WORKDIR workspace
 
 ##########
 # Golang #
