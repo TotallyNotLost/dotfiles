@@ -16,7 +16,7 @@ touch ~/.config/hypr/hyprland-local.conf
 
 Install necessary packages with pacman.
 ```sh
-sudo pacman -S brightnessctl btop fzf git-delta lsd neovim ranger ueberzugpp
+sudo pacman -S btop fzf git-delta hypridle hyprlock lsd neovim ranger swayosd-git ueberzugpp
 ```
 
 Stow dot configs.
