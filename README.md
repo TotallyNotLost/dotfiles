@@ -19,10 +19,9 @@ This is a good place for monitor settings.
 touch ~/.config/hypr/hyprland-local.conf
 ```
 
-Install necessary packages with pacman.
+Pacman:
 ```sh
-sudo pacman -S btop fzf git-delta hypridle hyprlock lsd neovim ranger swayosd-git ueberzugpp
-```
+sudo pacman -S btop fzf git-delta hypridle hyprlock lsd neovim swayosd-git ueberzugpp yazi
 
 Stow dot configs.
 ```sh

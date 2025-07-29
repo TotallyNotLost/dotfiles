@@ -6,7 +6,7 @@ FROM $IMAGE AS base
 ENV TERM=xterm-256color
 
 RUN apt update && apt upgrade -y
-RUN apt install -y bash curl dpkg-dev git highlight locales lsd ranger ripgrep ruby stow tmux
+RUN apt install -y bash curl dpkg-dev git highlight locales lsd ripgrep ruby stow tmux yazi
 RUN curl -sS https://starship.rs/install.sh  | sh -s -- -y
 
 # Set locale to en_US.UTF-8
