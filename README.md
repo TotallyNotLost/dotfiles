@@ -10,7 +10,7 @@ stow -t ~ package1 [package2]
 Recommended packages are:
 
 ```sh
-stow -t ~ backgrounds bash git hypr nvim starship-local tmux teamocil waybar wofi
+stow -t ~ backgrounds bash git hypr kitty nvim starship-local tmux teamocil television waybar wofi
 ```
 
 Create a hyprland-local.conf and store any local settings there.
@@ -21,11 +21,12 @@ touch ~/.config/hypr/hyprland-local.conf
 
 Pacman:
 ```sh
-sudo pacman -S btop fzf git-delta hypridle hyprlock lsd neovim swayosd-git swww ueberzugpp yazi zoxide
+sudo pacman -S bat btop git-delta hypridle hyprlock kitty lsd neovim starship swayosd-git swww television ueberzugpp yazi zoxide
+```
 
-Stow dot configs.
+Yay:
 ```sh
-stow -t ~ backgrounds bash git hypr nvim starship-local tmux teamocil waybar wofi
+yay -S python-pywalfox
 ```
 
 # Configuration
