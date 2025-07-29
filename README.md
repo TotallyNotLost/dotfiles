@@ -22,8 +22,9 @@ touch ~/.config/hypr/hyprland-local.conf
 Pacman:
 ```sh
 sudo pacman -S bat btop git-delta hypridle hyprlock lsd neovim starship swayosd-git swww television ueberzugpp yazi zoxide
+```
 
-Stow dot configs.
+Yay:
 ```sh
-stow -t ~ backgrounds bash git hypr nvim starship-local tmux teamocil waybar wofi
+yay -S python-pywalfox
 ```
