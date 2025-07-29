@@ -1,0 +1,5 @@
+[config]
+
+[templates.television]
+input_path = '~/.config/matugen/templates/television.toml'
+output_path = '~/.config/television/themes/matugen.toml'
