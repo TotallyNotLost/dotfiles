@@ -21,7 +21,7 @@ touch ~/.config/hypr/hyprland-local.conf
 
 Pacman:
 ```sh
-sudo pacman -S btop fzf git-delta hypridle hyprlock lsd neovim swayosd-git ueberzugpp yazi
+sudo pacman -S btop fzf git-delta hypridle hyprlock lsd neovim swayosd-git swww ueberzugpp yazi
 
 Stow dot configs.
 ```sh
