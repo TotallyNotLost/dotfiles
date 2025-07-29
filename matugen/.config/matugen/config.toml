@@ -1,5 +1,9 @@
 [config]
 
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship-colors.toml'
+output_path = '~/.config/starship.toml'
+
 [templates.television]
 input_path = '~/.config/matugen/templates/television.toml'
 output_path = '~/.config/television/themes/matugen.toml'
