@@ -20,3 +20,6 @@ if command -v go 2>&1 >/dev/null; then
     go env -w GOPATH=$HOME/.go
     PATH=$PATH:$HOME/.go/bin
 fi
+
+# Zoxide
+eval "$(zoxide init bash --cmd cd)"
