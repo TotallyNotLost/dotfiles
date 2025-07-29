@@ -34,6 +34,11 @@ RUN dpkg -i nvim-linux-x86_64.deb
 
 RUN gem install teamocil
 
+# Install television
+RUN VER=`curl -s "https://api.github.com/repos/alexpasmantier/television/releases/latest" | grep '"tag_name":' | sed -E 's/.*"tag_name": "([^"]+)".*/\1/'`
+RUN curl -LO https://github.com/alexpasmantier/television/releases/download/$VER/tv-$VER-x86_64-unknown-linux-musl.deb
+RUN dpkg -i tv-$VER-x86_64-unknown-linux-musl.deb
+
 #
 # User configuration
 #
@@ -50,7 +55,6 @@ RUN mkdir -p .code/github.com/TotallyNotLost
 
 WORKDIR .code/github.com/TotallyNotLost
 
-RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 RUN git clone --depth 1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 RUN git clone --depth 1 https://github.com/TotallyNotLost/dotfiles
 
