@@ -27,3 +27,7 @@ Stow dot configs.
 ```sh
 stow -t ~ backgrounds bash git hypr nvim starship-local tmux teamocil waybar wofi
 ```
+
+# Configuration
+
+`touch ~/.config/nvim/lua/settings-local.lua`
