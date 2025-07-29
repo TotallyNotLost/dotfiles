@@ -26,7 +26,7 @@ sudo pacman -S bat btop git-delta hypridle hyprlock kitty lsd neovim starship sw
 
 Yay:
 ```sh
-yay -S python-pywalfox
+yay -S matugen-bin python-pywalfox
 ```
 
 # Configuration
