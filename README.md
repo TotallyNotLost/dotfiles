@@ -1,3 +1,4 @@
+# Installation
 Use GNU stow to install packages.
 
 E.g.
@@ -6,7 +7,11 @@ E.g.
 stow -t ~ package1 [package2]
 ```
 
-# Arch
+Recommended packages are:
+
+```sh
+stow -t ~ backgrounds bash git hypr nvim starship-local tmux teamocil waybar wofi
+```
 
 Create a hyprland-local.conf and store any local settings there.
 This is a good place for monitor settings.
