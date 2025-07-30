@@ -1,3 +1,5 @@
+@import "colors.css";
+
 /* Colors (gruvbox) */
 /*
 @define-color black	#282828;
@@ -23,7 +25,7 @@
 @define-color foreground	#f8f8f2;
 @define-color background	rgba(40, 42, 54, 0.5);
 @define-color orange	#ffb86c;
-@define-color gray	#44475a;
+@define-color gray      rgba(40, 42, 54, 0.8);
 @define-color black #21222c;
 @define-color red	#ff5555;
 @define-color green	#50fa7b;
@@ -45,12 +47,12 @@
 
 @define-color workspace_background	@background;
 @define-color workspace_button	@foreground;
-@define-color workspace_active	@black;
-@define-color workspace_active_background	@arch_blue;
+@define-color workspace_active	@foreground;
+@define-color workspace_active_background	@primary_container; /* @gray; */
 @define-color workspace_urgent	@white;
 @define-color workspace_urgent_background	@brred;
-@define-color workspace_hover	@black;
-@define-color workspace_hover_background	@pink;
+@define-color workspace_hover	@secondary;
+@define-color workspace_hover_background	@secondary_container;
 @define-color critical	@red;
 @define-color warning	@yellow;
 
