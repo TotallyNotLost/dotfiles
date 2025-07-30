@@ -10,7 +10,7 @@ stow -t ~ package1 [package2]
 Recommended packages are:
 
 ```sh
-stow -t ~ backgrounds bash git hypr kitty nvim starship-local tmux teamocil television waybar wofi
+stow -t ~ backgrounds bash bat git hypr kitty nvim starship-local tmux teamocil television waybar wofi
 ```
 
 Create a hyprland-local.conf and store any local settings there.
@@ -27,6 +27,13 @@ sudo pacman -S bat btop git-delta hypridle hyprlock kitty lsd neovim starship sw
 Yay:
 ```sh
 yay -S matugen-bin python-pywalfox
+```
+
+Installing bat theme:
+```
+mkdir -p ~/.config/bat/themes
+git clone https://github.com/kristoferfannar/onedark-bat.git ~/.config/bat/themes/onedark-bat
+bat cache --build
 ```
 
 # Configuration
