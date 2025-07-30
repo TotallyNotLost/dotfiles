@@ -6,3 +6,4 @@ lazy-lock.json
 settings-local.lua
 television/.config/television/themes/matugen.toml
 tmux/.config/tmux/plugins
+waybar/.config/waybar/colors.css
