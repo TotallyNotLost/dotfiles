@@ -1,6 +1,8 @@
 bashrc-local.sh
+bat/.config/bat/themes
 hyprland-local.conf
-settings-local.lua
+kitty/.config/kitty/colors.conf
 lazy-lock.json
+settings-local.lua
 television/.config/television/themes/matugen.toml
 tmux/.config/tmux/plugins
