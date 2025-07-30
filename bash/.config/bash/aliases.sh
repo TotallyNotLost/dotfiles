@@ -5,6 +5,7 @@ alias la='ll -a'
 
 # Nvim
 alias v='nvim'
+alias lazyvim='NVIM_APPNAME=lazyvim nvim'
 
 # Git
 alias ga='git add'
