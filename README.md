@@ -30,7 +30,7 @@ stow -t ~ package1 [package2]
 Recommended packages are:
 
 ```sh
-stow -t ~ backgrounds bash bat git hypr kitty nvim starship-local tmux teamocil television waybar wofi
+stow -t ~ backgrounds bash bat git hypr kitty nvim tmux teamocil television waybar wofi
 ```
 
 Create a hyprland-local.conf and store any local settings there.
