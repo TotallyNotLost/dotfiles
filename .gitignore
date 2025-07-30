@@ -2,4 +2,5 @@ bashrc-local.sh
 hyprland-local.conf
 settings-local.lua
 lazy-lock.json
+television/.config/television/themes/matugen.toml
 tmux/.config/tmux/plugins
