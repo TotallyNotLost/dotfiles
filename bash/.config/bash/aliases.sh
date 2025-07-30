@@ -3,6 +3,9 @@ alias l='lsd --date relative'
 alias ll='l -l'
 alias la='ll -a'
 
+# Wallpaper
+alias wallpaper='~/.config/bash/utils/wallpaper.sh'
+
 # Nvim
 alias v='nvim'
 alias lazyvim='NVIM_APPNAME=lazyvim nvim'
