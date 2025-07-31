@@ -147,6 +147,7 @@
 		},
 		"scroll-step": 5.0,
 		"on-click": "swayosd-client --output-volume mute-toggle",
+		"on-click-right": "pavucontrol",
 		"on-scroll-up": "swayosd-client --output-volume raise",
 		"on-scroll-down": "swayosd-client --output-volume lower",
 		"tooltip-format": "{icon} {desc} | {volume}%",
