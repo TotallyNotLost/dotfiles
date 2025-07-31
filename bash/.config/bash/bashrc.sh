@@ -5,7 +5,7 @@ export EDITOR=nvim
 eval "$(starship init bash)"
 
 # Television
-echo 'eval "$(tv init bash)"' >> ~/.bashrc
+eval "$(tv init bash)"
 
 # Local config
 if [ -f ~/.config/bash/bashrc-local.sh ]; then
