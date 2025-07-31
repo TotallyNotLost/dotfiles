@@ -1,0 +1,7 @@
+modmap:
+  - name: Caps lock to Escape
+    remap:
+      CapsLock: Esc
+  - name: Escape to Backtick
+    remap:
+      Esc: KEY_GRAVE
