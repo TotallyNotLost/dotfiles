@@ -2,7 +2,7 @@
 
 Pacman:
 ```sh
-sudo pacman -S bat btop git git-delta hypridle hyprland hyprlock kitty less lsd neovim starship stow swayosd swww television ueberzugpp yazi zoxide
+sudo pacman -S bat btop git git-delta hypridle hyprland hyprlock kitty less lsd neovim pavucontrol starship stow swayosd swww television ueberzugpp yazi zoxide
 ```
 
 Yay:
