@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 WALLPAPER_DIR=~/.config/backgrounds/
 SELECTED_WALL=$(hellpaper "$WALLPAPER_DIR")
