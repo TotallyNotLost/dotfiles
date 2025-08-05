@@ -46,7 +46,10 @@
 	},
 
 	"hyprland/workspaces": {
-		"format": "{name}",
+		"format": "{icon}",
+		"format-icons": {
+			"5": ""
+		},
 		"show-special": false,
 		"on-click": "activate",
 		"on-scroll-up": "hyprctl dispatch workspace e+1",
