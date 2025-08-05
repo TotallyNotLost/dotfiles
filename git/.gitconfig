@@ -1,7 +1,3 @@
-[user]
-	name = Me
-	email = TotallyNotLost@proton.me
-
 [core]
 	editor = nvim
 	pager = delta
@@ -17,3 +13,9 @@
 
 [merge]
 	conflictstyle = zdiff3
+
+[gpg]
+	format = ssh
+
+[commit]
+	gpgsign = true
