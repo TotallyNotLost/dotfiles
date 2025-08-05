@@ -41,3 +41,12 @@ touch ~/.config/hypr/hyprland-local.conf
 
 Same thing for nvim local settings:
 `touch ~/.config/nvim/lua/settings-local.lua`
+
+# Git signing keys
+
+```zsh
+git config gpg.format ssh
+git config user.signingkey /PATH/TO/.SSH/KEY.PUB
+```
+
+Then add the public key as a signing key in GitHub.
