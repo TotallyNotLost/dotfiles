@@ -1,5 +1,6 @@
 bashrc-local.sh
 bat/.config/bat/themes
+hypr/.config/hypr/colors.conf
 hyprland-local.conf
 kitty/.config/kitty/colors.conf
 lazy-lock.json

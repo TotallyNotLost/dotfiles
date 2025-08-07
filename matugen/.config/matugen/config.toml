@@ -4,6 +4,14 @@
 input_path = '~/.config/matugen/templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
 
+[templates.foot]
+input_path = '~/.config/matugen/templates/foot.ini'
+output_path = '~/.config/foot/foot.ini'
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
@@ -17,6 +25,10 @@ post_hook = 'pywalfox update'
 [templates.starship]
 input_path = '~/.config/matugen/templates/starship-colors.toml'
 output_path = '~/.config/starship.toml'
+
+[templates.tclock]
+input_path = '~/.config/matugen/templates/tclock.color'
+output_path = '~/.config/tclock/tclock.color'
 
 [templates.television]
 input_path = '~/.config/matugen/templates/television.toml'
