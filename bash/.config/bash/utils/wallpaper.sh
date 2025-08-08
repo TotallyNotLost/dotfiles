@@ -11,3 +11,10 @@ fi
 
 swww img --transition-type wipe "$SELECTED_WALL"
 matugen image "$SELECTED_WALL"
+
+# Reload btop
+killall btop
+foot --title btop btop
+
+killall tclock
+foot --title tclock tclock --color "$(cat ~/.config/tclock/tclock.color)"
