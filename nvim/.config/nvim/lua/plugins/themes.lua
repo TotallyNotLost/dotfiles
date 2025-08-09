@@ -1,22 +1,17 @@
 return {
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	{ "rebelot/kanagawa.nvim" },
 	{
-		"navarasu/onedark.nvim",
-		priority = 1000, -- make sure to load this before all the other start plugins
-		config = function()
-			require('onedark').setup {
-				style = 'darker'
-			}
-			-- Enable theme
-			require('onedark').load()
-		end
-	},
-	{ 'sainnhe/sonokai' },
-	{
-		"folke/tokyonight.nvim",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		lazy = false,
 		priority = 1000,
-		opts = {}
-	}
+		config = function()
+		    vim.cmd.colorscheme("catppuccin-mocha")
+		end,
+	},
+	{ "EdenEast/nightfox.nvim" },
+	{ "folke/tokyonight.nvim" },
+	{ "navarasu/onedark.nvim" },
+	{ "oxfist/night-owl.nvim" },
+	{ "rebelot/kanagawa.nvim" },
+	{ 'sainnhe/sonokai' },
 }
